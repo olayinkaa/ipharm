@@ -25,7 +25,7 @@ const SuccessPage = () => {
             justify="center"
             alignItems="center"
             >
-               <Grid item xs={4}>
+               <Grid item xs={12} md={4}>
                     <Card className={classes.root}>
                         <CardContent>
                         <Typography variant="h4" component="h2" className={classes.title} color="textSecondary" gutterBottom>

@@ -75,7 +75,7 @@ const Registration = () => {
                                                 Biographic Data
                                             </Typography>
                                         </Grid>
-                                        <Grid item xs={2}>
+                                        <Grid item xs={12} md={2}>
                                             <MaterialSelectField
                                             name="prefix"
                                             label="Prefix"
@@ -90,7 +90,7 @@ const Registration = () => {
                                                 ))}
                                             </MaterialSelectField>
                                         </Grid>
-                                        <Grid item xs={3}>
+                                        <Grid item xs={12} md={3}>
                                             <MaterialTextField
                                             name="firstName"
                                             type="text"
@@ -101,7 +101,7 @@ const Registration = () => {
                                             fullWidth
                                             />
                                         </Grid>
-                                        <Grid item xs={3}>
+                                        <Grid item xs={12} md={3}>
                                             <MaterialTextField
                                             name="middleName"
                                             type="text"
@@ -112,7 +112,7 @@ const Registration = () => {
                                             fullWidth
                                             />
                                         </Grid>
-                                        <Grid item xs={4}>
+                                        <Grid item xs={12} md={4}>
                                             <MaterialTextField
                                             name="lastName"
                                             type="text"
@@ -124,7 +124,7 @@ const Registration = () => {
                                             />
                                         </Grid>
                                         {/* -------------------------------------> */}
-                                        <Grid item xs={6}>
+                                        <Grid item xs={12} md={6}>
                                             <MaterialSelectField
                                             name="suffix"
                                             label="Suffix"
@@ -139,7 +139,7 @@ const Registration = () => {
                                                 ))}
                                             </MaterialSelectField>
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={12} md={6}>
                                             <MaterialSelectField
                                             name="sex"
                                             label="Sex"
@@ -155,7 +155,7 @@ const Registration = () => {
                                             </MaterialSelectField>
                                         </Grid>
                                         {/* ------------------------------------> */}
-                                        <Grid item xs={6}>
+                                        <Grid item xs={12} md={6}>
                                             <MaterialTextField
                                             name="date_of_birth"
                                             type="date"
@@ -169,7 +169,7 @@ const Registration = () => {
                                             fullWidth
                                             />
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={12} md={6}>
                                             <MaterialTextField
                                             name="place_of_birth"
                                             type="text"
@@ -216,7 +216,7 @@ const Registration = () => {
                                             fullWidth
                                             />
                                         </Grid>
-                                        <Grid item xs={4}>
+                                        <Grid item xs={12} md={4}>
                                             <MaterialTextField
                                             name="city"
                                             type="text"
@@ -227,7 +227,7 @@ const Registration = () => {
                                             fullWidth
                                             />
                                         </Grid>
-                                        <Grid item xs={4}>
+                                        <Grid item xs={12} md={4}>
                                             <MaterialTextField
                                             name="stateProvince"
                                             type="text"
@@ -238,7 +238,7 @@ const Registration = () => {
                                             fullWidth
                                             />
                                         </Grid>
-                                        <Grid item xs={4}>
+                                        <Grid item xs={12} md={4}>
                                             <MaterialTextField
                                             name="postalCode"
                                             type="text"
@@ -271,7 +271,7 @@ const Registration = () => {
                                                 Credential Data
                                             </Typography>
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={12}  md={6}>
                                             <MaterialSelectField
                                             name="credentialType"
                                             label="Reference Credential Type"
@@ -286,7 +286,7 @@ const Registration = () => {
                                                 ))}
                                             </MaterialSelectField>
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={12} md={6}>
                                             <MaterialTextField
                                             name="credentialID"
                                             type="number"
@@ -297,7 +297,7 @@ const Registration = () => {
                                             fullWidth
                                             />
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={12} md={6}>
                                             <MaterialTextField
                                             name="date_of_issue"
                                             type="date"
@@ -311,7 +311,7 @@ const Registration = () => {
                                             fullWidth
                                             />
                                         </Grid>
-                                        <Grid item xs={6}>
+                                        <Grid item xs={12} md={6}>
                                             <MaterialTextField
                                             name="date_of_expiration"
                                             type="date"
@@ -325,7 +325,7 @@ const Registration = () => {
                                             fullWidth
                                             />
                                         </Grid>
-                                        <Grid item xs={12}>
+                                        <Grid item  xs={12}>
                                             <MaterialTextField
                                             name="issuingAuthority"
                                             type="text"
