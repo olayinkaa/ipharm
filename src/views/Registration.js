@@ -29,7 +29,7 @@ const Registration = () => {
         <div className={classes.root}>
            <Typography variant="h4" component="h2" className="mt-4">
                 <Box textAlign="center">
-                    Registrations
+                    Registration
                 </Box>
            </Typography>
            <Container className={classes.container}>
