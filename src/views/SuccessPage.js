@@ -29,7 +29,7 @@ const SuccessPage = () => {
                     <Card className={classes.root}>
                         <CardContent>
                         <Typography variant="h4" component="h2" className={classes.title} color="textSecondary" gutterBottom>
-                            Successfully Process
+                            Successfully Processed
                         </Typography>
                         </CardContent>
                     </Card>
