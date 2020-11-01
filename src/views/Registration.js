@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
    
   }));
 const redirectURL = ()=> {
-    window.location.href = 'https://www.goal.com/en-ng';
+    window.location.href = 'https://demo.etranzact.com/webconnect/v3/';
 }
 const Registration = () => {
     const classes = useStyles();
