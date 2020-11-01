@@ -51,8 +51,13 @@ const Registration = () => {
     const [loading,setLoading] =useState(false)
 
     const postData = ()=> {
-        axios.post(URL,Data).then(res=>{
-            console.log(res)
+        axios.post(URL,Data,{
+            headers:{
+                "secret-key":"DEMO_KEY",
+                "terminal-id":"0000000001"
+            }
+        }).then(res=>{
+           window.location.href= `${res.data.data.authorization_url}`
         }).catch(err=>{
             console.log(err)
         })
