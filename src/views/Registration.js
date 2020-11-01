@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import {Box,Button,Container,Grid,MenuItem,Paper,Typography} from '@material-ui/core'
 import {Formik,Form} from 'formik'
@@ -6,7 +6,7 @@ import { RegistrationSchema } from './../utils/validationSchema';
 import { MaterialTextField,MaterialSelectField} from './../components/FormikCustomMUI';
 import SaveIcon from '@material-ui/icons/Save';
 import {Gender,Prefix,Suffix,CredentialType} from '../utils/Data'
-
+import SimpleBackdrop from './../components/SImpleBackdrop';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -23,9 +23,11 @@ const redirectURL = ()=> {
 }
 const Registration = () => {
     const classes = useStyles();
-
+    const [loading,setLoading] =useState(false)
 
     return (
+        <>
+        {loading && <SimpleBackdrop/>}
         <div className={classes.root}>
            <Typography variant="h4" component="h2" className="mt-4">
                 <Box textAlign="center">
@@ -58,8 +60,10 @@ const Registration = () => {
                 }}
                 onSubmit={(data,{setSubmitting})=>{
                     setSubmitting(true)
+                    setLoading(true)
                     setTimeout(()=>{
                         setSubmitting(false)
+                        setLoading(false)
                         redirectURL()
                     },2000)
                 }}
@@ -360,6 +364,7 @@ const Registration = () => {
                 </Formik>
            </Container>
         </div>
+        </>
     )
 }
 
