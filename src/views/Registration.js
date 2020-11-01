@@ -7,6 +7,9 @@ import { MaterialTextField,MaterialSelectField} from './../components/FormikCust
 import SaveIcon from '@material-ui/icons/Save';
 import {Gender,Prefix,Suffix,CredentialType} from '../utils/Data'
 import SimpleBackdrop from './../components/SImpleBackdrop';
+import axios from 'axios'
+import md5 from 'md5'
+
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -18,12 +21,42 @@ const useStyles = makeStyles((theme) => ({
     }
    
   }));
-const redirectURL = ()=> {
-    window.location.href = 'https://demo.etranzact.com/webconnect/v3/';
+
+// const redirectURL = ()=> {
+//     window.location.href = 'https://demo.etranzact.com/webconnect/v3/';
+//     window.location.href = 'https://demo.etranzact.com/webconnect/v3/?p=2a10x0FA8dGunXqwNNJznuQeuePIqa1Gb6nF24AXiiE4VCmyaADWTS';
+// }
+
+const transaction_id = Date.now()
+const URL = "https://demo.etranzact.com/CardProcessor/merchant-details/initiate"
+const checkSum = md5(`50000000000001${transaction_id}https://ipharm.netlify.app/success-pageDEMO_KEY`)
+
+const Data = {
+        "currency_code":"NGN",
+        "terminal_id":"0000000001",
+        "logo_url":" https://cdn.svgporn.com/logos/kustomer.svg ",
+        "response_url":"https://ipharm.netlify.app/success-page",
+        "transaction_id":transaction_id.toString(),
+        "amount":"5000",
+        "fullname":"Enenim Asukwo",
+        "description":"COVID-19 Test",
+        "checksum":checkSum,
+        "email":"youremail@gmail.com",
+        "phone_no":"0907869544444"
 }
+
+
 const Registration = () => {
     const classes = useStyles();
     const [loading,setLoading] =useState(false)
+
+    const postData = ()=> {
+        axios.post(URL,Data).then(res=>{
+            console.log(res)
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
 
     return (
         <>
@@ -64,7 +97,7 @@ const Registration = () => {
                     setTimeout(()=>{
                         setSubmitting(false)
                         setLoading(false)
-                        redirectURL()
+                        postData()
                     },2000)
                 }}
                 validationSchema={RegistrationSchema}
