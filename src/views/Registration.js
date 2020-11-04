@@ -22,11 +22,6 @@ const useStyles = makeStyles((theme) => ({
    
   }));
 
-// const redirectURL = ()=> {
-//     window.location.href = 'https://demo.etranzact.com/webconnect/v3/';
-//     window.location.href = 'https://demo.etranzact.com/webconnect/v3/?p=2a10x0FA8dGunXqwNNJznuQeuePIqa1Gb6nF24AXiiE4VCmyaADWTS';
-// }
-
 const transaction_id = Date.now()
 const URL = "https://demo.etranzact.com/CardProcessor/merchant-details/initiate"
 const checkSum = md5(`50000000000001${transaction_id}https://ipharm.netlify.app/success-pageDEMO_KEY`)

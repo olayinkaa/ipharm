@@ -1,11 +1,11 @@
 export const Gender = [
     {
         id:1,
-        gender:'Male'
+        name:'Male'
     },
     {
         id:2,
-        gender:'Female'
+        name:'Female'
     }
 ]
 
@@ -73,12 +73,30 @@ export const Suffix = [
 ]
 
 export const CredentialType = [
+  
     {
         id:1,
-        name:'Passport'
+        name:'ECOWAS'
     },
     {
         id:2,
-        name:'ECOWAD'
+        name:'NIN Number'
+    },
+    {
+        id:3,
+        name:'Passport'
+    },
+]
+
+export const MessageMedium = [
+  
+    {
+        id:1,
+        name:'Email'
+    },
+    {
+        id:2,
+        name:'SMS'
     }
+   
 ]
