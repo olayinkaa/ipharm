@@ -21,7 +21,8 @@ const {
         dateOfIssue,
         dateOfExpiration,
         issuingAuthority,
-        sendMedium
+        sendMedium,
+        discountOffer
     }
 } = CheckoutFormModel
 
@@ -45,7 +46,8 @@ const initialValues = {
     [dateOfIssue.name]:'',
     [dateOfExpiration.name]:'',
     [issuingAuthority.name]:'',
-    [sendMedium.name]:''
+    [sendMedium.name]:'',
+    [discountOffer.name]:'',
 }
 
 export default initialValues;

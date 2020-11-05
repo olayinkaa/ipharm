@@ -4,13 +4,13 @@ import {
     Grid
 } from '@material-ui/core';
 
-import {InputField,SelectField,DatePickerField,RadioButton} from './../FormFields';
+import {InputField,SelectField,DatePickerField,RadioButton,CheckBoxField} from './../FormFields';
 import {CredentialType} from '../../utils/Data'
 import {getCountries} from '../../services'
 import {MessageMedium} from '../../utils/Data'
 
 
-const CredentialData = ({formField}) => {
+const CredentialData = ({formField,stepTitle,activeStep}) => {
     const [country,setCountry] = useState([])
     const {
         credentialType,
@@ -18,7 +18,8 @@ const CredentialData = ({formField}) => {
         dateOfIssue,
         dateOfExpiration,
         issuingAuthority,
-        sendMedium
+        sendMedium,
+        discountOffer
      } = formField
 
 
@@ -35,8 +36,8 @@ const CredentialData = ({formField}) => {
 
     return (
         <React.Fragment>
-            <Typography variant="h6" gutterBottom>
-                Credential Data
+            <Typography variant="h6" gutterBottom align="center">
+               {stepTitle[activeStep]}
             </Typography>
             <Grid container direction="row" spacing={2}>
                 <Grid item xs={12} sm={12}>
@@ -94,6 +95,12 @@ const CredentialData = ({formField}) => {
                     data={MessageMedium}
                     fullWidth
                     margin="dense"
+                    />
+                </Grid>
+                <Grid item xs={12}>
+                    <CheckBoxField
+                    name={discountOffer.name}
+                    label={discountOffer.label}
                     />
                 </Grid>
             </Grid>

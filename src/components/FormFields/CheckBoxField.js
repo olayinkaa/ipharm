@@ -20,8 +20,6 @@ export default function CheckboxField(props) {
     }
   }
 
-  console.log(helper)
-
   function _onChange(e) {
     setValue(e.target.checked);
   }
@@ -31,7 +29,7 @@ export default function CheckboxField(props) {
       <FormControlLabel
         value={field.checked}
         checked={field.checked}
-        control={<Checkbox {...field} onChange={_onChange} />}
+        control={<Checkbox {...field} onChange={_onChange}  color="primary" />}
         label={label}
       />
       {_renderHelperText()}

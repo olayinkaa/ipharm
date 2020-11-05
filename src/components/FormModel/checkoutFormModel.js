@@ -101,6 +101,11 @@ const formModel = {
             name:"sendMedium",
             label:"How do you want your data sent to you",
             requiredErrorMsg:"Please choose one"  
+        },
+        discountOffer:{
+            name:"discountOffer",
+            label:"Do you want to have a discount offer for MyVax or for a travel and vaccination card bundle sent to you with other offers",
+             
         }
 
     }

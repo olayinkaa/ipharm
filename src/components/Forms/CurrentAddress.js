@@ -6,7 +6,7 @@ import {
 
 import {InputField} from './../FormFields';  
 
-const CurrentAddress = ({formField}) => {
+const CurrentAddress = ({formField,stepTitle,activeStep}) => {
     const {
        address,
        aptSuite,
@@ -18,8 +18,8 @@ const CurrentAddress = ({formField}) => {
 
     return (
         <React.Fragment>
-             <Typography variant="h6" gutterBottom>
-                Current Address
+             <Typography variant="h6" gutterBottom align="center">
+                {stepTitle[activeStep]}
             </Typography>
             <Grid container direction="row" spacing={2}>
                 <Grid item xs={12} sm={12}>

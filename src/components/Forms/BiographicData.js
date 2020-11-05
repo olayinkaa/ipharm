@@ -3,14 +3,13 @@ import {
     Typography,
     Grid
 } from '@material-ui/core';
-
 import {InputField,SelectField,DatePickerField,RadioButton} from './../FormFields';
 import {Gender,Prefix,Suffix} from '../../utils/Data'
 import {getCountries} from '../../services'
-const BiographicData = ({formField}) => {
 
+
+const BiographicData = ({formField,activeStep,stepTitle}) => {
     const [country,setCountry] = useState([])
-
     const {
         prefix,
         firstName,
@@ -25,7 +24,6 @@ const BiographicData = ({formField}) => {
 
     const queryCountries = () => {
         getCountries().then(res=>{
-            console.log(res.data)
             setCountry(res.data)
         }).catch(err=>console.log(err))
     }
@@ -36,8 +34,8 @@ const BiographicData = ({formField}) => {
 
     return (
         <React.Fragment>
-            <Typography variant="h6" gutterBottom>
-                Biographic Data
+            <Typography variant="h6" gutterBottom align="center">
+                {stepTitle[activeStep]}
             </Typography>
             <Grid container direction="row"  spacing={1}>
                 <Grid item xs={12} sm={12}>
@@ -94,7 +92,7 @@ const BiographicData = ({formField}) => {
                         label={dateOfBirth.label}
                         format="dd/MM/yy"
                         // views={['year', 'month']}
-                        minDate={new Date()}
+                        // minDate={new Date()}
                         maxDate={new Date('2050/12/31')}
                         fullWidth
                     />

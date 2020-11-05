@@ -1,4 +1,4 @@
-import React,{Fragment,useState} from 'react'
+import React,{Fragment,useState,useCallback} from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {
     AppBar,
@@ -15,18 +15,19 @@ import { Formik, Form } from 'formik';
 import BiographicData from './../components/Forms/BiographicData';
 import CredentialData from './../components/Forms/CredentialData';
 import CurrentAddress from './../components/Forms/CurrentAddress';
+import SummaryPage from './../components/Forms/SummaryPage';
 // import Footer from '../components/Footer'
 import checkoutFormModel from '../components/FormModel/checkoutFormModel'
 import formInitialValues from '../components/FormModel/formInitialValues'
 import validationSchema from '../components/FormModel/validationSchema'
 import useStyles from '../styles'
 import { postData } from './../services';
+import SimpleBackdrop from './../components/SImpleBackdrop';
 
 
-
-const steps = ['Biographic Data', 'Current Address', 'Credential Data'];
+const steps = ['Biographic Data', 'Current Address', 'Credential Data','Review Entries'];
 const { formId, formField } = checkoutFormModel;
-
+/*
 function _renderStepContent(step) {
     switch (step) {
       case 0:
@@ -39,13 +40,34 @@ function _renderStepContent(step) {
         throw new Error('Unknown step');
     }
   }
+
+*/
   
 
 const PreRegistration = () => {
     const classes = useStyles();
     const [activeStep, setActiveStep] = useState(0);
+    const [loading, setLoading] = useState(false);
     const currentValidationSchema = validationSchema[activeStep];
     const isLastStep = activeStep === steps.length - 1;
+
+    const _renderStepContent = useCallback(
+        (step) => {
+            switch (step) {
+                case 0:
+                  return <BiographicData formField={formField} stepTitle={steps} activeStep={activeStep} />;
+                case 1:
+                  return <CurrentAddress formField={formField} stepTitle={steps} activeStep={activeStep} />;
+                case 2:
+                  return <CredentialData formField={formField} stepTitle={steps} activeStep={activeStep} />;
+                case 3:
+                  return <SummaryPage stepTitle={steps} activeStep={activeStep} />;
+                default:
+                  throw new Error('Unknown step');
+              }
+        },
+        [activeStep],
+    )
 
     function _sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -59,7 +81,9 @@ const PreRegistration = () => {
         }).catch(err=>console.log(err))
         actions.setSubmitting(false);
         actions.resetForm()
-        setActiveStep(0)
+        await setLoading(true)
+        // setActiveStep(0)
+
         // setActiveStep(activeStep + 1);
 
       }
@@ -80,6 +104,7 @@ const PreRegistration = () => {
 
     return (
         <Fragment>
+            {loading && <SimpleBackdrop/>}
             <CssBaseline />
             <AppBar position="absolute" color="default" className={classes.appBar}>
                 <Toolbar>
@@ -93,7 +118,11 @@ const PreRegistration = () => {
                     <Typography component="h2" variant="h4" align="center">
                         Pre-Registration
                     </Typography>
-                    <Stepper activeStep={activeStep} className={classes.stepper}>
+                    <Stepper 
+                    activeStep={activeStep} 
+                    className={classes.stepper} 
+                    // alternativeLabel
+                    >
                         {steps.map(label => (
                         <Step key={label}>
                             <StepLabel>{label}</StepLabel>
