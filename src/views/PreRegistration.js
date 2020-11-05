@@ -46,7 +46,7 @@ function _renderStepContent(step) {
 
 const PreRegistration = () => {
     const classes = useStyles();
-    const [activeStep, setActiveStep] = useState(3);
+    const [activeStep, setActiveStep] = useState(0);
     const [loading, setLoading] = useState(false);
     const currentValidationSchema = validationSchema[activeStep];
     const isLastStep = activeStep === steps.length - 1;

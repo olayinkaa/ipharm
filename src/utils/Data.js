@@ -80,7 +80,7 @@ export const CredentialType = [
     },
     {
         id:2,
-        name:'NIN Number'
+        name:'NIN number'
     },
     {
         id:3,
