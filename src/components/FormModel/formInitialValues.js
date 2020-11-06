@@ -47,7 +47,7 @@ const initialValues = {
     [dateOfExpiration.name]:'',
     [issuingAuthority.name]:'',
     [sendMedium.name]:'',
-    [discountOffer.name]:'',
+    [discountOffer.name]:false,
 }
 
 export default initialValues;

@@ -146,7 +146,7 @@ const SummaryPage = ({stepTitle,activeStep}) => {
                             </TableRow>
                             <TableRow>
                                 <TableCell align="left">Discount Offer</TableCell>
-                                <TableCell align="left">{discountOffer?"YES":"NO"}</TableCell>
+                                <TableCell align="left">{discountOffer===true?"YES":"NO"}</TableCell>
                             </TableRow>
                     </TableBody>
                 </Table>
