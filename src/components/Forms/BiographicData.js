@@ -7,7 +7,6 @@ import {InputField,SelectField,DatePickerField,RadioButton} from './../FormField
 import {Gender,Prefix,Suffix} from '../../utils/Data'
 import {getCountries} from '../../services'
 
-
 const BiographicData = ({formField,activeStep,stepTitle}) => {
     const [country,setCountry] = useState([])
     const {

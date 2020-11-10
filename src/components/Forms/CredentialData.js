@@ -34,6 +34,9 @@ const CredentialData = ({formField,stepTitle,activeStep}) => {
          queryCountries()
      }, [])
 
+
+    const filteredCountry = country.filter(x=>x.name!="Antarctica")
+
     return (
         <React.Fragment>
             <Typography variant="h6" gutterBottom align="center">
@@ -52,7 +55,7 @@ const CredentialData = ({formField,stepTitle,activeStep}) => {
                     <InputField 
                     name={credentialNumber.name} 
                     label={credentialNumber.label} 
-                    type="number"
+                    // type="number"
                     fullWidth
                     />
                 </Grid>
@@ -62,7 +65,7 @@ const CredentialData = ({formField,stepTitle,activeStep}) => {
                     label={dateOfIssue.label}
                     format="dd/MM/yy"
                     // views={['year', 'month']}
-                    minDate={new Date()}
+                    // minDate={new Date()}
                     maxDate={new Date('2050/12/31')}
                     fullWidth
                     style={{outline:"none"}}
@@ -74,7 +77,7 @@ const CredentialData = ({formField,stepTitle,activeStep}) => {
                     label={dateOfExpiration.label}
                     format="dd/MM/yy"
                     // views={['year', 'month']}
-                    minDate={new Date()}
+                    // minDate={new Date()}
                     maxDate={new Date('2050/12/31')}
                     fullWidth
                     style={{outline:"none"}}
@@ -84,7 +87,7 @@ const CredentialData = ({formField,stepTitle,activeStep}) => {
                     <SelectField 
                     name={issuingAuthority.name} 
                     label={issuingAuthority.label} 
-                    data={country}
+                    data={filteredCountry}
                     fullWidth
                     />
                 </Grid>

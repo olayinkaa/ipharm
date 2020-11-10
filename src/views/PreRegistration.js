@@ -11,6 +11,7 @@ import {
     Toolbar,
     Typography
 } from '@material-ui/core';
+import SendShardIcon from '@material-ui/icons/SendSharp';
 import { Formik, Form } from 'formik';
 import BiographicData from './../components/Forms/BiographicData';
 import CredentialData from './../components/Forms/CredentialData';
@@ -43,7 +44,6 @@ function _renderStepContent(step) {
 
 */
   
-
 const PreRegistration = () => {
     const classes = useStyles();
     const [activeStep, setActiveStep] = useState(0);
@@ -154,6 +154,7 @@ const PreRegistration = () => {
                                         variant="contained"
                                         color="primary"
                                         className={classes.button}
+                                        endIcon={<SendShardIcon/>}
                                         >
                                         {isLastStep ? 'Submit' : 'Next'}
                                         </Button>

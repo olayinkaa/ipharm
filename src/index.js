@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './App.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import  {ThemeProvider} from '@material-ui/styles'
 import theme from './utils/theme'
 import {BrowserRouter} from 'react-router-dom'
-
+import 'react-phone-input-2/lib/style.css'
+// import 'react-phone-input-2/lib/material.css'
 
 ReactDOM.render(
   <React.StrictMode>

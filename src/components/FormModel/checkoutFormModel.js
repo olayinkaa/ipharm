@@ -61,6 +61,11 @@ const formModel = {
             label:"State/Province",
             requiredErrorMsg:"State/Province is required"  
         },
+        phoneNumber:{
+            name:"phoneNumber",
+            label:"Phone Number",
+            requiredErrorMsg:"Phone number is required"  
+        },
         postalCode:{
             name:"postalCode",
             label:"Postal Code",

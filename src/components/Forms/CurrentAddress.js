@@ -3,8 +3,7 @@ import {
     Typography,
     Grid
 } from '@material-ui/core';
-
-import {InputField} from './../FormFields';  
+import {InputField,PhoneField} from './../FormFields'; 
 
 const CurrentAddress = ({formField,stepTitle,activeStep}) => {
     const {
@@ -13,6 +12,7 @@ const CurrentAddress = ({formField,stepTitle,activeStep}) => {
        city,
        stateProvince,
        postalCode,
+       phoneNumber,
        emailAddress,
     } = formField
 
@@ -50,8 +50,16 @@ const CurrentAddress = ({formField,stepTitle,activeStep}) => {
                     name={stateProvince.name} 
                     label={stateProvince.label} 
                     fullWidth 
+                    style={{marginBottom:"20px"}}
                     />
                 </Grid>
+                {/* <Grid item xs={12} sm={12}> */}
+                    {/* <PhoneField
+                    name={phoneNumber.name}
+                    label={phoneNumber.label}
+                    fullWidth
+                    /> */}
+                {/* </Grid> */}
                 <Grid item xs={12} sm={12}>
                     <InputField 
                     name={postalCode.name} 

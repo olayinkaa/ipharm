@@ -73,7 +73,6 @@ export const Suffix = [
 ]
 
 export const CredentialType = [
-  
     {
         id:1,
         name:'ECOWAS'

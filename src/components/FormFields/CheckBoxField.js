@@ -29,8 +29,8 @@ export default function CheckboxField(props) {
     <FormControl {...rest}>
       <FormControlLabel
         // value={field.checked}
-        // checked={field.checked}
-        control={<Checkbox {...field} onChange={_onChange}  color="primary" />}
+        // checked={field.value}
+        control={<Checkbox {...field} checked={field.value} onChange={_onChange}  color="primary" />}
         label={label}
       />
       {_renderHelperText()}
