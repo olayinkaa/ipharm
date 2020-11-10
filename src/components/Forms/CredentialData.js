@@ -35,7 +35,7 @@ const CredentialData = ({formField,stepTitle,activeStep}) => {
      }, [])
 
 
-    const filteredCountry = country.filter(x=>x.name!="Antarctica")
+    const filteredCountry = country.filter(x=>x.name!=="Antarctica")
 
     return (
         <React.Fragment>

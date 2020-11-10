@@ -3,7 +3,10 @@ import {
     Typography,
     Grid
 } from '@material-ui/core';
-import {InputField,PhoneField} from './../FormFields'; 
+import {
+    InputField,
+    // PhoneField
+} from './../FormFields'; 
 
 const CurrentAddress = ({formField,stepTitle,activeStep}) => {
     const {
@@ -12,7 +15,7 @@ const CurrentAddress = ({formField,stepTitle,activeStep}) => {
        city,
        stateProvince,
        postalCode,
-       phoneNumber,
+    //    phoneNumber,
        emailAddress,
     } = formField
 
